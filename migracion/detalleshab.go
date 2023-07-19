@@ -6,6 +6,7 @@ type DetallesHab struct {
 	Anio                        int    //1995-2023
 	TipoEmp                     string //D: Docentes, H: HorasCátedras, P: Prejubilados, B: Becarios, L: Limpieza (camioneros), A: Resto de empleados (planta, mensualizados, médicos)
 	Legajo                      int
+	Cargo                       int
 	NombreApellido              string
 	Documento                   int
 	Cuil                        int
