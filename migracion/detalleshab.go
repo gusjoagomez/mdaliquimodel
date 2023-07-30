@@ -1,5 +1,7 @@
 package models
 
+import "github.com/shopspring/decimal"
+
 type DetallesHab struct {
 	TipoReg                     int    //1=haberes, 2=SAC
 	Mes                         int    //1-12
@@ -26,8 +28,8 @@ type DetallesHab struct {
 	DescripcionConcepto         string
 	CodigoEntidad               int
 	DescripcionEntidad          string
-	Unidades                    float64
-	Importe                     float64
+	Unidades                    decimal.Decimal `json:"unidades" gorm:"type:numeric(8,2);column:unidades"`
+	Importe                     decimal.Decimal `json:"importe" gorm:"type:numeric(15,2);column:importe"`
 	AnomesRetroactivo           int
 	Escalafon                   int
 	Categoria                   int
