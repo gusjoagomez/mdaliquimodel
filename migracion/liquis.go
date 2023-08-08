@@ -12,7 +12,6 @@ type Liquis struct {
 	Deleted_at       *time.Time `json:"deleted_at" gorm:"column:deleted_at"`
 	Id_agr           uint       `json:"id_agr" gorm:"type:int8;column:id_agr"`
 	Id_plaper        uint       `json:"id_plaper" gorm:"type:int4;column:id_plaper"`
-	Id_gruper        uint       `json:"id_gruper" gorm:"type:int4;column:id_gruper"`
 	Anio_liq         uint       `json:"anio_liq" gorm:"type:int4;column:anio_liq"`
 	Mes_liq          uint       `json:"mes_liq" gorm:"type:int4;column:mes_liq"`
 	Anio_dev         uint       `json:"anio_dev" gorm:"type:int4;column:anio_dev"`
