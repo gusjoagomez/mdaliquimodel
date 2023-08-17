@@ -18,7 +18,7 @@ type Liquis struct {
 	Mes_dev          uint       `json:"mes_dev" gorm:"type:int4;column:mes_dev"`
 	Anio_gan         uint       `json:"anio_gan" gorm:"type:int4;column:anio_gan"`
 	Mes_gan          uint       `json:"mes_gan" gorm:"type:int4;column:mes_gan"`
-	Tipo_liq         string     `json:"tipo_liq" gorm:"column:tipo_liq"`
+	Tipo_liq         uint       `json:"tipo_liq" gorm:"column:tipo_liq"`
 	Stipo_liq        uint       `json:"stipo_liq" gorm:"column:stipo_liq"`
 	Fecha_pago       time.Time  `json:"fecha_pago" gorm:"column:fecha_pago"`
 	Descripcion      string     `json:"descripcion" gorm:"column:descripcion"`

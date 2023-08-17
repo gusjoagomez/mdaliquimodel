@@ -27,7 +27,7 @@ type LiquiCons struct {
 	Imp_item      decimal.Decimal `json:"imp_item" gorm:"type:numeric(12,2);column:imp_item"`
 	Tipo_concepto uint            `json:"tipo_concepto" gorm:"type:int8;column:tipo_concepto"`
 	Tipo_con_gan  uint            `json:"tipo_con_gan" gorm:"type:int8;column:tipo_con_gan"`
-	Tipo_liq      string          `json:"tipo_liq" gorm:"column:tipo_liq"`
+	Tipo_liq      uint            `json:"tipo_liq" gorm:"column:tipo_liq"`
 }
 
 func (e *LiquiCons) TableName() string {
