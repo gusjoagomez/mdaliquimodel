@@ -22,7 +22,7 @@ type LiquiCons struct {
 	Mes_dev       uint            `json:"mes_dev" gorm:"type:int4;column:mes_dev"`
 	Fecha_desde   time.Time       `json:"fecha_desde" gorm:"column:fecha_desde"`
 	Concepto_id   uint            `json:"concepto_id" gorm:"type:int8;column:concepto_id"`
-	Cantidad      string          `json:"cantidad" gorm:"column:cantidad"`
+	Cantidad      decimal.Decimal `json:"cantidad" gorm:"type:numeric(10,2);column:cantidad"`
 	Imp_unit      decimal.Decimal `json:"imp_unit" gorm:"type:numeric(12,2);column:imp_unit"`
 	Imp_item      decimal.Decimal `json:"imp_item" gorm:"type:numeric(12,2);column:imp_item"`
 	Tipo_concepto uint            `json:"tipo_concepto" gorm:"type:int8;column:tipo_concepto"`
