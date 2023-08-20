@@ -16,11 +16,7 @@ type LiquiCons struct {
 	Legajo_id     uint            `json:"legajo_id" gorm:"type:int4;column:legajo_id"`
 	Nro_legajo    uint            `json:"nro_legajo" gorm:"type:int4;column:nro_legajo"`
 	Nro_cargo     uint            `json:"nro_cargo" gorm:"type:int4;column:nro_cargo"`
-	Anio_liq      uint            `json:"anio_liq" gorm:"type:int4;column:anio_liq"`
-	Mes_liq       uint            `json:"mes_liq" gorm:"type:int4;column:mes_liq"`
 	Aniomes_pag   string          `json:"aniomes_pag" gorm:"type:varchar(6);column:aniomes_pag"`
-	Anio_dev      uint            `json:"anio_dev" gorm:"type:int4;column:anio_dev"`
-	Mes_dev       uint            `json:"mes_dev" gorm:"type:int4;column:mes_dev"`
 	Aniomes_dev   string          `json:"aniomes_dev" gorm:"type:varchar(6);column:aniomes_dev"`
 	Fecha_desde   time.Time       `json:"fecha_desde" gorm:"column:fecha_desde"`
 	Concepto_id   uint            `json:"concepto_id" gorm:"type:int8;column:concepto_id"`
@@ -31,6 +27,11 @@ type LiquiCons struct {
 	Tipo_con_gan  uint            `json:"tipo_con_gan" gorm:"type:int8;column:tipo_con_gan"`
 	Tipo_liq      uint            `json:"tipo_liq" gorm:"column:tipo_liq"`
 }
+
+// Anio_liq      uint            `json:"anio_liq" gorm:"type:int4;column:anio_liq"`
+// Mes_liq       uint            `json:"mes_liq" gorm:"type:int4;column:mes_liq"`
+// Anio_dev      uint            `json:"anio_dev" gorm:"type:int4;column:anio_dev"`
+// Mes_dev       uint            `json:"mes_dev" gorm:"type:int4;column:mes_dev"`
 
 func (e *LiquiCons) TableName() string {
 	return "migracion.liqui_cons"
