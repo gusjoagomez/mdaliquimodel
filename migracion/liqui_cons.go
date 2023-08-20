@@ -18,7 +18,7 @@ type LiquiCons struct {
 	Nro_cargo     uint            `json:"nro_cargo" gorm:"type:int4;column:nro_cargo"`
 	Anio_liq      uint            `json:"anio_liq" gorm:"type:int4;column:anio_liq"`
 	Mes_liq       uint            `json:"mes_liq" gorm:"type:int4;column:mes_liq"`
-	Aniomes_pag   string          `json:"aniomes_pag" gorm:"type:type:varchar(6);column:aniomes_pag"`
+	Aniomes_pag   string          `json:"aniomes_pag" gorm:"type:varchar(6);column:aniomes_pag"`
 	Anio_dev      uint            `json:"anio_dev" gorm:"type:int4;column:anio_dev"`
 	Mes_dev       uint            `json:"mes_dev" gorm:"type:int4;column:mes_dev"`
 	Aniomes_dev   string          `json:"aniomes_dev" gorm:"type:varchar(6);column:aniomes_dev"`
