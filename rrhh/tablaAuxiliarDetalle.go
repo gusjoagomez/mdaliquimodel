@@ -19,7 +19,7 @@ type TablaAuxiliarDetalle struct {
 	FechaDesde        time.Time        `json:"fechaDesde" gorm:"index:tablaAuxiliarIdUnica2,priority:2,unique;type:timestamp;column:fechaDesde"`
 	FechaHasta        time.Time        `json:"fechaHasta" gorm:"type:timestamp;column:fechaHasta"`
 	CodigoString      string           `json:"codigoString" gorm:"index:tablaAuxiliarIdUnica2,priority:4,unique;type:varchar(250);column:codigoString"`
-	CodigoInt         uint             `json:"codigoInt" gorm:"index:tablaAuxiliarIdUnica2,priority:3,unique;type:int4;column:codigoInt"`
+	CodigoInt         int              `json:"codigoInt" gorm:"index:tablaAuxiliarIdUnica2,priority:3,unique;type:int4;column:codigoInt"`
 	Descripcion       string           `json:"descripcion" gorm:"type:varchar(50);column:descripcion"`
 	Numerico1         decimal.Decimal  `json:"numerico1" gorm:"type:numeric(15,2);column:numerico1"`
 	Numerico2         decimal.Decimal  `json:"numerico2" gorm:"type:numeric(15,2);column:numerico2"`
