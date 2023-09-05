@@ -12,12 +12,9 @@ type Liquis struct {
 	Deleted_at       *time.Time `json:"deleted_at" gorm:"column:deleted_at"`
 	Id_agr           uint       `json:"id_agr" gorm:"type:int8;column:id_agr"`
 	Id_plaper        uint       `json:"id_plaper" gorm:"type:int4;column:id_plaper"`
-	Anio_liq         uint       `json:"anio_liq" gorm:"type:int4;column:anio_liq"`
-	Mes_liq          uint       `json:"mes_liq" gorm:"type:int4;column:mes_liq"`
-	Anio_dev         uint       `json:"anio_dev" gorm:"type:int4;column:anio_dev"`
-	Mes_dev          uint       `json:"mes_dev" gorm:"type:int4;column:mes_dev"`
-	Anio_gan         uint       `json:"anio_gan" gorm:"type:int4;column:anio_gan"`
-	Mes_gan          uint       `json:"mes_gan" gorm:"type:int4;column:mes_gan"`
+	Aniomes_liq      string     `json:"aniomes_liq" gorm:"type:varchar(6);column:aniomes_liq"`
+	Aniomes_dev      string     `json:"aniomes_dev" gorm:"type:varchar(6);column:aniomes_dev"`
+	Aniomes_gan      string     `json:"aniomes_gan" gorm:"type:varchar(6);column:aniomes_gan"`
 	Tipo_liq         uint       `json:"tipo_liq" gorm:"column:tipo_liq"`
 	Stipo_liq        uint       `json:"stipo_liq" gorm:"column:stipo_liq"`
 	Fecha_pago       time.Time  `json:"fecha_pago" gorm:"column:fecha_pago"`
