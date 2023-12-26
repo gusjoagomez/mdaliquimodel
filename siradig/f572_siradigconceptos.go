@@ -1,9 +1,11 @@
 package models
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/shopspring/decimal"
+	"gorm.io/gorm"
 )
 
 type F572Siradigconceptos struct {
@@ -23,4 +25,29 @@ type F572Siradigconceptos struct {
 
 func (e *F572Siradigconceptos) TableName() string {
 	return "siradig.f572_siradigconceptos"
+}
+
+func (c *F572Siradigconceptos) SetGrupoTipo(db *gorm.DB, legajo uint, cuit int64, anio, mes, version int, grupo, tipo string, valor float64) bool {
+	var ret bool = false
+
+	Atributo := F572Relacionatributos{}
+	result := db.Where("grupo = ?  AND codigoafip = ? AND active = true", grupo, tipo).First(&Atributo)
+	if result.Error == nil {
+		c.Legajo = uint(legajo)
+		c.Cuit = uint(cuit)
+		c.Anio = uint(anio)
+		c.Mes = uint(mes)
+		c.Nrover = uint(version)
+		c.Atributo = Atributo.Atributo
+		c.Valor = decimal.NewFromFloat(valor)
+		ret = true
+	} else {
+		if result.Error == gorm.ErrRecordNotFound { //NO se encontro atributo
+			fmt.Println("*No está configurado atributo para grupo/codigoafip: " + grupo + "/" + tipo)
+		} else { //Otro error
+			fmt.Println("*Error al buscar grupo/codigoafip: ", result.Error)
+		}
+		ret = false
+	}
+	return ret
 }
